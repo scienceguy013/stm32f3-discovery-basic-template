@@ -11,7 +11,8 @@ STD_PERIPH_LIB=Libraries
 LDSCRIPT_INC=Device/ldscripts
 
 # location of OpenOCD Board .cfg files (only used with 'make program')
-OPENOCD_BOARD_DIR=/home/matt/bin/openocd/share/openocd/scripts/board
+#OPENOCD_BOARD_DIR=/home/matt/bin/openocd/share/openocd/scripts/board
+OPENOCD_BOARD_DIR=/usr/local/share/openocd/scripts/board
 
 # Configuration (cfg) file containing programming directives for OpenOCD
 OPENOCD_PROC_FILE=extra/stm32f3-openocd.cfg
@@ -19,12 +20,13 @@ OPENOCD_PROC_FILE=extra/stm32f3-openocd.cfg
 # that's it, no need to change anything below this line!
 
 ###################################################
+TC = /home/jtanenba/toolchain/gcc-arm-none-eabi-4_7-2012q4/bin/arm-none-eabi
 
-CC=arm-none-eabi-gcc
-GDB=arm-none-eabi-gdb
-OBJCOPY=arm-none-eabi-objcopy
-OBJDUMP=arm-none-eabi-objdump
-SIZE=arm-none-eabi-size
+CC=$(TC)-gcc
+GDB=$(TC)-gdb
+OBJCOPY=$(TC)-objcopy
+OBJDUMP=$(TC)-objdump
+SIZE=$(TC)-size
 
 CFLAGS  = -Wall -g -std=c99 -Os  
 CFLAGS += -mlittle-endian -mcpu=cortex-m4  -march=armv7e-m -mthumb

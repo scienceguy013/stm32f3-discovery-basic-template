@@ -1,6 +1,6 @@
-CC=arm-none-eabi-gcc
-AR=arm-none-eabi-ar
-
+TC = /home/jtanenba/toolchain/gcc-arm-none-eabi-4_7-2012q4/bin/arm-none-eabi
+CC=$(TC)-gcc
+AR=$(TC)-ar
 ###########################################
 
 vpath %.c STM32F30x_StdPeriph_Driver/src STM32_USB-FS-Device_Driver/src
